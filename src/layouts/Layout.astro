@@ -9,9 +9,16 @@ import '../styles/global.css'
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<script src="../scripts/index.ts"></script>
 	</head>
 	<body>
-		<slot />
+		<header>
+
+		</header>
+		<section class="bg-cyan-200">
+			<slot />
+		</section>
+		<footer></footer>
 	</body>
 </html>
 
