@@ -26,7 +26,7 @@ import {WebsiteColor} from "../scripts/index";
 
     header {
         background-color: color-mix(in lab, var(--color-contrast) 80%, black);
-        padding: 3px 0;
+        padding: proportions.$gap-xs 0;
 
         nav {
             display: flex;
@@ -39,7 +39,7 @@ import {WebsiteColor} from "../scripts/index";
             padding: 0;
             list-style: none;
             display: flex;
-            gap: 32px;
+            gap: calc(proportions.$gap-xxl + proportions.$gap-xl);
         }
     }
 

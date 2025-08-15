@@ -14,16 +14,17 @@ const types: Array<String> = ["secondary", "accent"];
 
 <style lang="scss" define:vars={{buttonBackground: `var(${buttonColor})`, textColor: `var(${linkColor})`}}>
     @use '../styles/main.scss';
+    @use '/src/styles/base/proportions.scss';
 
     a {
-        padding: 8px 16px;
+        padding: proportions.$gap-md proportions.$gap-lg;
         text-decoration: none;
         background-color: var(--buttonBackground);
         transition: .2s ease-in-out;
         color: var(--textColor);
 
         &:hover {
-            outline: 3px var(--buttonBackground) solid;
+            outline: proportions.$gap-xs var(--buttonBackground) solid;
             background-color: transparent;
             color: var(--buttonBackground);
         }

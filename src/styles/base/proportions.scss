@@ -4,3 +4,11 @@ $font-scale: 1.333;
 
 $font-size-h1: clamp.autoClamp(28px, 32px);
 $font-size-content: calc($font-size-h1 / 3);
+
+$gap-xxs: 2px;
+$gap-xs: 3px;
+$gap-sm: 5px;
+$gap-md: 8px;
+$gap-lg: 13px;
+$gap-xl: 21px;
+$gap-xxl: 34px;

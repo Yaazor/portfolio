@@ -1,35 +1,37 @@
 ---
 import { Image } from 'astro:assets';
-import PageWrapper from "../layouts/PageWrapper.astro";
 import Paragraph from './texts/Paragraph.astro';
 import { WebsiteColor } from '../scripts';
 import Section from './Section.astro';
+import Heading from './texts/Heading.astro';
 
 const {name, title, image} = Astro.props;
 ---
 
 <Section backgroundColor={WebsiteColor.CONTRAST}>
-	<PageWrapper>
-		<article>
-			<div>
-                <div class="hero_showcase">
-                    <h1>{name}</h1>
-                    <h2>{title}</h2>
-                </div>
-                <Paragraph
-                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel malesuada tellus, a mattis eros. Nullam pharetra volutpat elit, ut posuere odio finibus id. Donec vulputate odio eget pellentesque convallis. Sed tincidunt elit vel leo sagittis, ut tincidunt orci faucibus. Donec a lobortis dui."
-                    color={WebsiteColor.PAGE}
-                />
-                <Paragraph
-                    text="In risus justo, dapibus et suscipit eget, ultrices vitae orci. Donec bibendum ligula eu augue facilisis, a gravida lacus dignissim."
-                    color={WebsiteColor.PAGE}
-                />
-            </div>
-			<div class="hero_image">
-				<Image src={image} alt="Image - Cercles" />
+	<article>
+		<div>
+			<div class="hero_showcase">
+				<Heading size="1" color={WebsiteColor.PAGE} extra="true">
+					{name}
+				</Heading>
+				<Heading size="2" color={WebsiteColor.PRIMARY} extra="true">
+					{title}
+				</Heading>
 			</div>
-		</article>
-	</PageWrapper>
+			<Paragraph
+				text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel malesuada tellus, a mattis eros. Nullam pharetra volutpat elit, ut posuere odio finibus id. Donec vulputate odio eget pellentesque convallis. Sed tincidunt elit vel leo sagittis, ut tincidunt orci faucibus. Donec a lobortis dui."
+				color={WebsiteColor.PAGE}
+			/>
+			<Paragraph
+				text="In risus justo, dapibus et suscipit eget, ultrices vitae orci. Donec bibendum ligula eu augue facilisis, a gravida lacus dignissim."
+				color={WebsiteColor.PAGE}
+			/>
+		</div>
+		<div class="hero_image">
+			<Image src={image} alt="Image - Cercles" />
+		</div>
+	</article>
 <Section>
 
 <style lang="scss">
@@ -39,26 +41,10 @@ const {name, title, image} = Astro.props;
 	article {
 		display: flex;
 		justify-content: space-between;
-		padding: 100px 0;
+		padding: calc(proportions.$gap-xxl + proportions.$gap-xl) 0;
 	}
 
     .hero_image img {
         width: 100%;
     }
-
-	.hero_showcase {
-		h1, h2 {
-			margin-bottom: 0;
-            font-family: fonts.$display;
-		}
-		h1 {
-			color: var(--color-page);
-			font-size: calc(proportions.$font-size-h1 * (proportions.$font-scale));
-		}
-		h2 {
-			color: var(--color-primary);
-			font-size: calc(proportions.$font-size-h1);
-            margin-top: 0;
-		}
-	}
 </style>
