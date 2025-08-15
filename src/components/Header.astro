@@ -1,5 +1,8 @@
 ---
 import PageWrapper from "../layouts/PageWrapper.astro"
+import Button from "./Button.astro"
+import Link from "./texts/Link.astro"
+import {WebsiteColor} from "../scripts/index";
 ---
 
 <header>
@@ -7,20 +10,20 @@ import PageWrapper from "../layouts/PageWrapper.astro"
         <nav>
             <menu>
                 <li>
-                    <a href="/">accueil</a>
+                    <Link path="/" text="accueil" color={WebsiteColor.PAGE}/>
                 </li>
                 <li>
-                    <a href="#projects">mes projets</a>
+                    <Link path="#projects" text="mes projets" color={WebsiteColor.PAGE}/>
                 </li>
             </menu>
-            <a href="/contact">
-                contact
-            </a>
+            <Button text="contact" path="/contact"/>
         </nav>
     </PageWrapper>
 </header>
 
 <style lang="scss">
+    @use '/src/styles/base/proportions.scss';
+
     header {
         background-color: rgba(0, 0, 0, .2);
         padding: 3px 0;
@@ -30,6 +33,7 @@ import PageWrapper from "../layouts/PageWrapper.astro"
             align-items: center;
             justify-content: space-between;
         }
+
         menu {
             margin: 0;
             padding: 0;
@@ -39,8 +43,7 @@ import PageWrapper from "../layouts/PageWrapper.astro"
         }
     }
 
-    a {
-        font-size: 23px;
-        color: var(--color-page);
+    header :global(a) {
+        font-size: proportions.$font-size-content;
     }
 </style>

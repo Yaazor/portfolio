@@ -1,0 +1,19 @@
+---
+const {size} = Astro.props;
+const Element = `h${size}`;
+---
+<Element>
+    <slot/>
+</Element>
+
+<style lang="scss">
+    @use '/src/styles/base/rules.scss';
+
+    h1 {
+        font-size: var(--font-size-h1);
+    }
+
+    h1, h2 {
+        font-family: 'Lusitana', serif;
+    }
+</style>

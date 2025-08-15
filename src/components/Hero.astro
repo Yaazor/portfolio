@@ -1,28 +1,28 @@
 ---
 import { Image } from 'astro:assets';
 import PageWrapper from "../layouts/PageWrapper.astro";
-import home_circles from "../assets/home_circles.svg";
+
+const {name, title, image} = Astro.props;
 ---
 
 <section class="hero">
 	<PageWrapper>
 		<article>
 			<div class="hero_showcase">
-				<h1>Bruno Plante-Godin</h1>
-				<h2>Développeur Web</h2>
-			
+				<h1>{name}</h1>
+				<h2>{title}</h2>
 			</div>
 			<div class="hero_shapes">
-				<Image src={home_circles} alt="Image - Cercles" />
+				<Image src={image} alt="Image - Cercles" />
 			</div>
 		</article>
 	</PageWrapper>
 </section>
 
 <style lang="scss">
-	@use '../styles/main';
+	@use '/src/styles/base/proportions.scss';
 
-	.hero article{
+	.hero article {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -35,11 +35,11 @@ import home_circles from "../assets/home_circles.svg";
 		}
 		h1 {
 			color: var(--color-page);
-			font-size: 96px;
+			font-size: calc(proportions.$font-size-h1 * (proportions.$font-scale));
 		}
 		h2 {
 			color: var(--color-primary);
-			font-size: 64px
+			font-size: calc(proportions.$font-size-h1);
 		}
 	}
 </style>

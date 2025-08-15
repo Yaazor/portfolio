@@ -1,0 +1,31 @@
+---
+const info = Astro.props;
+let buttonColor: String = "--color-primary";
+let linkColor: String = "--color-contrast";
+
+const { text, path} = Astro.props;
+const types: Array<String> = ["secondary", "accent"];
+
+---
+
+<a class:list={[info["type"]]} href={path}>
+    {text}
+</a>
+
+<style lang="scss" define:vars={{buttonBackground: `var(${buttonColor})`, textColor: `var(${linkColor})`}}>
+    @use '../styles/main.scss';
+
+    a {
+        padding: 8px 16px;
+        text-decoration: none;
+        background-color: var(--buttonBackground);
+        transition: .2s ease-in-out;
+        color: var(--textColor);
+
+        &:hover {
+            outline: 3px var(--buttonBackground) solid;
+            background-color: transparent;
+            color: var(--buttonBackground);
+        }
+    }
+</style>

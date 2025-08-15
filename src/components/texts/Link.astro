@@ -1,0 +1,23 @@
+---
+const {text, path} = Astro.props;
+let color = Astro.props["color"];
+
+if(color != null) {
+    color = `var(${color})`;
+}
+---
+<a href={path} style={{color: color}}>
+    {text}
+</a>
+
+<style lang="scss">
+    @use '/src/styles/main.scss';
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+</style>

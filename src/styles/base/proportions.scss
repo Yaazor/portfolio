@@ -1,0 +1,6 @@
+@use '/src/styles/tools/clamp.scss';
+
+$font-scale: 1.333;
+
+$font-size-h1: clamp.autoClamp(28px, 32px);
+$font-size-content: calc($font-size-h1 / 3);
