@@ -6,3 +6,13 @@ export enum WebsiteColor {
     PAGE = "--color-page",
     CONTRAST = "--color-contrast"
 }
+
+export enum Spacing {
+    XXS = 2,
+    XS = 3,
+    SM = 5,
+    MD = 8,
+    LG = 13,
+    XL = 21,
+    XXL = 34
+}

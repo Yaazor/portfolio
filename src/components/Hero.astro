@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Paragraph from './texts/Paragraph.astro';
-import { WebsiteColor } from '../scripts';
+import { WebsiteColor, Spacing } from '../scripts';
 import Section from './Section.astro';
 import Heading from './texts/Heading.astro';
 
@@ -12,10 +12,10 @@ const {name, title, image} = Astro.props;
 	<article>
 		<div>
 			<div class="hero_showcase">
-				<Heading size="1" color={WebsiteColor.PAGE} extra="true">
+				<Heading size="1" color={WebsiteColor.PAGE} extra="true" marginBottom={Spacing.XXS}>
 					{name}
 				</Heading>
-				<Heading size="2" color={WebsiteColor.PRIMARY} extra="true">
+				<Heading size="2" color={WebsiteColor.PRIMARY} extra="true" marginTop={Spacing.XXS}>
 					{title}
 				</Heading>
 			</div>

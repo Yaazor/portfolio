@@ -1,9 +1,9 @@
 ---
-let {size, color, extra} = Astro.props;
+let {size, color, extra, marginTop, marginBottom} = Astro.props;
 const Element = `h${size}`;
 
 ---
-<Element class:list={['heading', {extra: extra}]} style={{color: `var(${color})`}}>
+<Element class:list={['heading', {extra: extra}]} style={{color: `var(${color})`, marginTop: `${marginTop}px`, marginBottom: `${marginBottom}px`}}>
     <slot/>
 </Element>
 
@@ -11,11 +11,7 @@ const Element = `h${size}`;
     @use '/src/styles/base/rules.scss';
     @use '/src/styles/base/fonts.scss';
     @use '/src/styles/base/proportions.scss';
-
-    .heading {
-        margin-bottom: 0;
-    }
-
+    
     h1 {
         font-size: proportions.$font-size-h1;
         &.extra {
