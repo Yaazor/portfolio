@@ -1,9 +1,9 @@
 ---
 import PageWrapper from "../layouts/PageWrapper.astro";
-const {backgroundColor} = Astro.props;
+const {backgroundColor, id} = Astro.props;
 ---
 
-<section style={{backgroundColor: `var(${backgroundColor})`}}>
+<section style={{backgroundColor: `var(${backgroundColor})`}} id={id}>
     <PageWrapper>
         <slot/>
     </PageWrapper>
