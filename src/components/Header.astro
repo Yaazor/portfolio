@@ -1,0 +1,46 @@
+---
+import PageWrapper from "../layouts/PageWrapper.astro"
+---
+
+<header>
+    <PageWrapper>
+        <nav>
+            <menu>
+                <li>
+                    <a href="/">accueil</a>
+                </li>
+                <li>
+                    <a href="#projects">mes projets</a>
+                </li>
+            </menu>
+            <a href="/contact">
+                contact
+            </a>
+        </nav>
+    </PageWrapper>
+</header>
+
+<style lang="scss">
+    header {
+        background-color: rgba(0, 0, 0, .2);
+        padding: 3px 0;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+    }
+
+    a {
+        font-size: 23px;
+        color: var(--color-page);
+    }
+</style>
