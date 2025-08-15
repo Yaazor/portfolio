@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro"
+const {title, description} = Astro.props;
 ---
 <!doctype html>
 <html lang="fr">
@@ -8,7 +9,9 @@ import Header from "../components/Header.astro"
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Portfolio</title>
+		<meta name="description" content={description}>
+
+		<title>{title}</title>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
