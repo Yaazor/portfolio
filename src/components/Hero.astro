@@ -1,31 +1,44 @@
 ---
 import { Image } from 'astro:assets';
 import PageWrapper from "../layouts/PageWrapper.astro";
+import Paragraph from './texts/Paragraph.astro';
+import { WebsiteColor } from '../scripts';
+import Section from './Section.astro';
 
 const {name, title, image} = Astro.props;
 ---
 
-<section class="hero">
+<Section backgroundColor={WebsiteColor.CONTRAST}>
 	<PageWrapper>
 		<article>
-			<div class="hero_showcase">
-				<h1>{name}</h1>
-				<h2>{title}</h2>
-			</div>
+			<div>
+                <div class="hero_showcase">
+                    <h1>{name}</h1>
+                    <h2>{title}</h2>
+                </div>
+                <Paragraph
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel malesuada tellus, a mattis eros. Nullam pharetra volutpat elit, ut posuere odio finibus id. Donec vulputate odio eget pellentesque convallis. Sed tincidunt elit vel leo sagittis, ut tincidunt orci faucibus. Donec a lobortis dui."
+                    color={WebsiteColor.PAGE}
+                />
+                <Paragraph
+                    text="In risus justo, dapibus et suscipit eget, ultrices vitae orci. Donec bibendum ligula eu augue facilisis, a gravida lacus dignissim."
+                    color={WebsiteColor.PAGE}
+                />
+            </div>
 			<div class="hero_image">
 				<Image src={image} alt="Image - Cercles" />
 			</div>
 		</article>
 	</PageWrapper>
-</section>
+<Section>
 
 <style lang="scss">
 	@use '/src/styles/base/proportions.scss';
+    @use '/src/styles/base/fonts.scss';
 
-	.hero article {
+	article {
 		display: flex;
-		align-items: center;
-		justify-content: space-around;
+		justify-content: space-between;
 		padding: 100px 0;
 	}
 
@@ -36,6 +49,7 @@ const {name, title, image} = Astro.props;
 	.hero_showcase {
 		h1, h2 {
 			margin-bottom: 0;
+            font-family: fonts.$display;
 		}
 		h1 {
 			color: var(--color-page);
@@ -44,6 +58,7 @@ const {name, title, image} = Astro.props;
 		h2 {
 			color: var(--color-primary);
 			font-size: calc(proportions.$font-size-h1);
+            margin-top: 0;
 		}
 	}
 </style>

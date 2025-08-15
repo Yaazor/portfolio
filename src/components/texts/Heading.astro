@@ -1,19 +1,21 @@
 ---
-const {size} = Astro.props;
+const {size, color} = Astro.props;
 const Element = `h${size}`;
 ---
-<Element>
+<Element style={{color: `var(${color})`}}>
     <slot/>
 </Element>
 
 <style lang="scss">
     @use '/src/styles/base/rules.scss';
+    @use '/src/styles/base/fonts.scss';
+    @use '/src/styles/base/proportions.scss';
 
     h1 {
-        font-size: var(--font-size-h1);
+        font-size: proportions.$font-size-h1;
     }
 
     h1, h2 {
-        font-family: 'Lusitana', serif;
+        font-family: fonts.$display;
     }
 </style>

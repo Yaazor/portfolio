@@ -1,6 +1,13 @@
 ---
 import Hero from "../Hero.astro";
 import home_circles from "../../assets/home_circles.svg";
+import Section from "../Section.astro";
+import { WebsiteColor } from "../../scripts";
+import Heading from "../texts/Heading.astro";
 ---
 
 <Hero name="Bruno Plante-Godin" title="Développeur Web" image={home_circles}/>
+
+<Section backgroundColor={WebsiteColor.PAGE}>
+	<Heading size="1">Projets</Heading>
+</Section>

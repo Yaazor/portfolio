@@ -1,0 +1,13 @@
+---
+import { WebsiteColor } from "../scripts";
+import Section from "./Section.astro";
+import Heading from "./texts/Heading.astro";
+import Paragraph from "./texts/Paragraph.astro";
+
+---
+<footer>
+    <Section backgroundColor={WebsiteColor.CONTRAST}>
+        <Heading size="1" color={WebsiteColor.PRIMARY}>Heading</Heading>
+        <Paragraph text="aaa" color={WebsiteColor.PAGE}>
+    </Section>
+</footer>

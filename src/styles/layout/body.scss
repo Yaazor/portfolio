@@ -1,7 +1,9 @@
 @use '/src/styles/base/proportions.scss';
+@use '/src/styles/base/fonts.scss';
 
 body {
-    background-color: var(--color-contrast);
+    background-color: var(--color-page);
     font-size: proportions.$font-size-content;
-    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-family: fonts.$content;
 }

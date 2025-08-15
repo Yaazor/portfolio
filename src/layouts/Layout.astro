@@ -1,4 +1,5 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro"
 const {title, description} = Astro.props;
 ---
@@ -22,6 +23,6 @@ const {title, description} = Astro.props;
 		<section class="bg-cyan-200">
 			<slot />
 		</section>
-		<footer></footer>
+		<Footer/>
 	</body>
 </html>

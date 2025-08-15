@@ -1,0 +1,9 @@
+---
+let {text, color} = Astro.props;
+if(color !== null) {
+    color = `var(${color})`;
+}
+---
+<p style={{color: color, maxWidth: '100ch'}}>
+    {text}
+</p>

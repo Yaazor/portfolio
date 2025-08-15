@@ -1,0 +1,10 @@
+---
+import PageWrapper from "../layouts/PageWrapper.astro";
+const {backgroundColor} = Astro.props;
+---
+
+<section style={{backgroundColor: `var(${backgroundColor})`}}>
+    <PageWrapper>
+        <slot/>
+    </PageWrapper>
+</section>
