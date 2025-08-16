@@ -1,0 +1,20 @@
+---
+import { WebsiteColor } from "../../scripts";
+
+const {name} = Astro.props;
+const color = WebsiteColor.CONTRAST;
+---
+<span>
+    {name}
+</span>
+
+<style lang="scss" define:vars={{labelColor: `var(${color})`}}>
+    @use '/src/styles/base/proportions.scss';
+
+    span {
+        border-radius: 30px;
+        background-color: var(--labelColor);
+        color: var(--color-page);
+        padding: proportions.$gap-xs proportions.$gap-xl;
+    }
+</style>

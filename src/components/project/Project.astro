@@ -1,0 +1,37 @@
+---
+import { Spacing } from "../../scripts";
+import Button from "../Button.astro";
+import Heading from "../texts/Heading.astro";
+import Paragraph from "../texts/Paragraph.astro";
+import SkillLabel from "./SkillLabel.astro";
+
+const {project} = Astro.props;
+---
+
+<div class="project">
+    <div class="image_wrapper"></div>
+    <div class="project_informations">
+        <Heading size="2" marginBottom={Spacing.XXS}>{project.name}</Heading>
+        <ul class="skills_list">
+            {project.skills.map((data: String) => <SkillLabel name={data}/>)}
+        </ul>
+        <Paragraph text={project.description}/>
+        <Button text="→ Découvrir" path={`/projects/${project.id}`}/>
+    </div>
+</div>
+
+<style lang="scss">
+    @use '/src/styles/base/proportions.scss';
+
+    .project {
+        padding: 0 0 proportions.$gap-xxl 0;
+    }
+
+    .skills_list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: wrap;
+        gap: proportions.$gap-md;
+    }
+</style>

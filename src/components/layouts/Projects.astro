@@ -1,9 +1,14 @@
 ---
 import { WebsiteColor } from "../../scripts";
+import Project from "../project/Project.astro";
 import Section from "../Section.astro";
 import Heading from "../texts/Heading.astro";
----
+import {projects} from "../../scripts/Project";
 
+---
 <Section backgroundColor={WebsiteColor.PAGE} id="projects">
 	<Heading size="1">Projets</Heading>
+	<div class="project_wrapper">
+		{projects.map((data) => <Project project={data}/>)}
+	</div>
 </Section>
