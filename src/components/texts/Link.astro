@@ -1,8 +1,16 @@
 ---
-const {text, path} = Astro.props;
-let color = Astro.props["color"];
+import type { WebsiteColor } from '../../scripts';
 
-if(color != null) {
+
+interface Props {
+    text: String,
+    path: URL,
+    color?: WebsiteColor|String
+}
+
+let {text, path, color} = Astro.props;
+
+if(color !== undefined) {
     color = `var(${color})`;
 }
 ---

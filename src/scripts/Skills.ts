@@ -1,3 +1,5 @@
+import { ProjectStatus } from "./ProjectStatus";
+
 export enum Skill {
     PHP = "PHP",
     MYSQL = "MySQL",
@@ -6,3 +8,4 @@ export enum Skill {
     GOLANG = "Go",
     ASTRO = "Astro"
 }
+

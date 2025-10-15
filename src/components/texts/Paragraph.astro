@@ -1,6 +1,13 @@
 ---
+import type { WebsiteColor } from '../../scripts';
+
+interface Props {
+    text: String,
+    color?: WebsiteColor|String
+}
+
 let {text, color} = Astro.props;
-if(color !== null) {
+if(color !== undefined) {
     color = `var(${color})`;
 }
 ---

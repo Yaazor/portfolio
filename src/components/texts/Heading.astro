@@ -1,4 +1,14 @@
 ---
+import type { WebsiteColor } from '../../scripts';
+
+interface Props {
+    size: Number,
+    marginTop?: Number,
+    marginBottom?: Number,
+    extra?: boolean,
+    color?: WebsiteColor|String,
+}
+
 let {size, color, extra, marginTop, marginBottom} = Astro.props;
 const Element = `h${size}`;
 

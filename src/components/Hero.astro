@@ -5,6 +5,12 @@ import { WebsiteColor, Spacing } from '../scripts';
 import Section from './Section.astro';
 import Heading from './texts/Heading.astro';
 
+interface Props {
+	name: String,
+	title: String,
+	image: ImageMetadata
+}
+
 const {name, title, image} = Astro.props;
 ---
 
@@ -12,10 +18,10 @@ const {name, title, image} = Astro.props;
 	<article>
 		<div>
 			<div class="hero_showcase">
-				<Heading size="1" color={WebsiteColor.PAGE} extra="true" marginBottom={Spacing.XXS}>
+				<Heading size={1} color={WebsiteColor.PAGE} extra={true} marginBottom={Spacing.XXS}>
 					{name}
 				</Heading>
-				<Heading size="2" color={WebsiteColor.PRIMARY} extra="true" marginTop={Spacing.XXS}>
+				<Heading size={2} color={WebsiteColor.PRIMARY} extra={true} marginTop={Spacing.XXS}>
 					{title}
 				</Heading>
 			</div>

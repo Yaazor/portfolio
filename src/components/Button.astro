@@ -1,14 +1,23 @@
 ---
+import { WebsiteColor } from '../scripts';
+
+
+interface Props {
+    text: String,
+    path: URL,
+    buttonColor?: WebsiteColor
+}
+
 const info = Astro.props;
-let buttonColor: String = "--color-primary";
+let buttonColor: WebsiteColor = WebsiteColor.PRIMARY;
 let linkColor: String = "--color-contrast";
 
-const { text, path} = Astro.props;
+const { text, path } = Astro.props;
 const types: Array<String> = ["secondary", "accent"];
-
+if("buttonColor" in Astro.props && Astro.props.buttonColor !== undefined) buttonColor = Astro.props.buttonColor;
 ---
 
-<a class:list={[info["type"]]} href={path}>
+<a href={path}>
     {text}
 </a>
 

@@ -1,5 +1,5 @@
 ---
-import { Spacing } from "../../scripts";
+import { Spacing, WebsiteColor } from "../../scripts";
 import Button from "../Button.astro";
 import Heading from "../texts/Heading.astro";
 import Paragraph from "../texts/Paragraph.astro";
@@ -11,12 +11,12 @@ const {project} = Astro.props;
 <div class="project">
     <div class="image_wrapper"></div>
     <div class="project_informations">
-        <Heading size="2" marginBottom={Spacing.XXS}>{project.name}</Heading>
+        <Heading size={2} marginBottom={Spacing.XXS}>{project.name}</Heading>
         <ul class="skills_list">
             {project.skills.map((data: String) => <SkillLabel name={data}/>)}
         </ul>
         <Paragraph text={project.description}/>
-        <Button text="→ Découvrir" path={`/projects/${project.id}`}/>
+        <Button buttonColor={WebsiteColor.SECONDARY} text="→ Découvrir" path={`/projects/${project.id}`}/>
     </div>
 </div>
 
