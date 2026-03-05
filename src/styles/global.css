@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@tailwind base;
+
+@theme {
+    --color-menu: var(--color-indigo-900);
+}
+
+@utility page-wrap {
+    max-width: 1440px;
+    margin-inline: auto;
+}
