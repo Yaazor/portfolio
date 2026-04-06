@@ -4,27 +4,32 @@ export const prerender = false;
 import Section from "./section";
 import { Switch } from "./ui/switch";
 import { TypographyH1, TypographyP } from "./ui/Typography";
-import { HasDarkMode, ToggleDarkMode } from '../lib/session'
-import { useEffect, useState } from "react";
-import { Icon, Quote } from "lucide-react";
+import Socials from "./Socials"
 import BlockText from "./BlockText"
+import { ButtonGroup } from "./ui/button-group";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
 ---
 
 {/** Section Hero */}
-<Section className="bg-indigo-300">
+<Section className="bg-neutral-300">
     <div class="flex flex-col md:block mb-13">
         <span class="text-8xl text-primary">Yazor</span>
-        <span class="text-5xl pl-7 opacity-70">
+        <span class="text-5xl md:pl-7 opacity-70">
             Développeur web
         </span>
     </div>
     <BlockText>
-        <TypographyP>
-            Étudiant en développement web et multimédia, je maîtrise des technologies et langages tels que Kotlin, Java, PHP et TypeScript.
+        <TypographyP className="mb-7">
+            Étudiant en <strong>développement web</strong> et <strong>multimédia</strong>, je maîtrise des technologies et langages tels que Kotlin, Java, PHP et TypeScript.
         </TypographyP>
-        <TypographyP>
-            Allo
-        </TypographyP>
+        <Button size={"lg"} className="mb-5" variant={"default"}>
+            <a href="/projets">
+                Mes projets
+                <ArrowRight className="inline"/>
+            </a>
+        </Button>
+        <Socials/>
     </BlockText>
 </Section>
 <Section>
