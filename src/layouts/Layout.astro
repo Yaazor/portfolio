@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navigation, { NavigationLink } from '../components/Navigation'
 import { ClientRouter } from 'astro:transitions';
 import { TypographyH1 } from '@/components/ui/Typography';
+import { StrictMode } from 'react';
 
 const {title} = Astro.props;
 ---
@@ -18,18 +19,20 @@ const {title} = Astro.props;
 		<ClientRouter/>
 	</head>
 	<body class="bg-background text-foreground">
-		<Navigation>
-			<NavigationLink name="accueil" path={new URL('/', Astro.url)}/>
-			<NavigationLink name="mes projets" path={new URL('projets', Astro.url)}/>
-		</Navigation>
-		<main class="page-wrap min-h-svh">
-			<slot />
-		</main>
+		<StrictMode>
+			<Navigation>
+				<NavigationLink name="accueil" path={new URL('/', Astro.url)}/>
+				<NavigationLink name="mes projets" path={new URL('projets', Astro.url)}/>
+			</Navigation>
+			<main class="min-h-svh">
+				<slot />
+			</main>
 
-		<footer class="bg-card-foreground min-h-8 p-8 text-card">
-			<div class="page-wrap">
-				
-			</div>
-		</footer>
+			<footer class="bg-card-foreground min-h-8 p-8 text-card">
+				<div class="page-wrap">
+					
+				</div>
+			</footer>
+		</StrictMode>
 	</body>
 </html>

@@ -10,6 +10,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  output: 'server',
+  session: {
+    driver: "node"
+  },
 
   integrations: [react()]
 });

@@ -7,8 +7,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @utility page-wrap {
-    max-width: 1440px;
+    padding-inline: var(--radius-lg);
     margin-inline: auto;
+    
 }
 
 @theme inline {

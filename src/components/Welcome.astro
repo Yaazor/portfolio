@@ -1,0 +1,32 @@
+---
+export const prerender = false;
+
+import Section from "./section";
+import { Switch } from "./ui/switch";
+import { TypographyH1, TypographyP } from "./ui/Typography";
+import { HasDarkMode, ToggleDarkMode } from '../lib/session'
+import { useEffect, useState } from "react";
+import { Icon, Quote } from "lucide-react";
+import BlockText from "./BlockText"
+---
+
+{/** Section Hero */}
+<Section className="bg-indigo-300">
+    <div class="flex flex-col md:block mb-13">
+        <span class="text-8xl text-primary">Yazor</span>
+        <span class="text-5xl pl-7 opacity-70">
+            Développeur web
+        </span>
+    </div>
+    <BlockText>
+        <TypographyP>
+            Étudiant en développement web et multimédia, je maîtrise des technologies et langages tels que Kotlin, Java, PHP et TypeScript.
+        </TypographyP>
+        <TypographyP>
+            Allo
+        </TypographyP>
+    </BlockText>
+</Section>
+<Section>
+    
+</Section>
