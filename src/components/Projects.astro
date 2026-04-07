@@ -4,44 +4,35 @@ interface Props {
 }
 
 
-import Project from "./project/Project";
 import herobrinefrImage from "../assets/projects/herobrinefr.png"
-import { Carousel, CarouselItem } from "./ui/carousel";
-import PortfolioProjet from '../types/PortfolioProject'
+import portfolioImage from "../assets/projects/portfolio.png"
+import ProjectList from "./ProjectList";
 
 const {isCarousel = false} = Astro.props
 
-const projects = [
-    new PortfolioProjet(
+---
+
+<div>
+    <ProjectList client:load projects={[
         {
-            title: "Herobrine.fr",
+            title: "Herobrine.fr - Site",
             image: herobrinefrImage,
             technologies: [
                 "Symfony", "MySQL", "Tailwind / Sass"
             ],
             description: [
-                "Test"
+                "Refonte d'une application web sortie en 2012 et accueillant plus de 24 000 inscrits.",
             ]
+        },
+        {
+            title: "Portfolio",
+            technologies: [
+                "Astro", "Typescript", "React"
+            ],
+            description: [
+                "Création d'un portfolio répertoriant certains de mes projets."
+            ],
+            image: portfolioImage
         }
-    )
-]
-
----
-
-{!isCarousel ? projects.map((item) => (
-    <Project technologies={item.getProps().technologies}
-        title={item.getProps().title}
-        image={item.getProps().image}
-        description={item.getProps().description}
-        >
-    </Project>
-)) : projects.map((item) => (
-    <CarouselItem>
-        <Project technologies={item.getProps().technologies}
-            title={item.getProps().title}
-            image={item.getProps().image}
-            description={item.getProps().description}
-            >
-        </Project>
-    </CarouselItem>
-))}
+    ]} isCarousel={isCarousel}/>
+</div>

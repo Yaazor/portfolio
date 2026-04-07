@@ -10,7 +10,6 @@ import { ButtonGroup } from "./ui/button-group";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import Projects from "./Projects.astro";
-import { Carousel, CarouselContent } from "./ui/carousel";
 ---
 
 {/** Section Hero */}
@@ -34,10 +33,12 @@ import { Carousel, CarouselContent } from "./ui/carousel";
         <Socials/>
     </BlockText>
 </Section>
+
 <Section>
-    <Carousel>
-        <CarouselContent>
-            <Projects isCarousel={false}/>
-        </CarouselContent>
-    </Carousel>
+    <TypographyH1>
+        Projets
+    </TypographyH1>
+    <div class="pt-6">
+        <Projects isCarousel={true}/>
+    </div>
 </Section>

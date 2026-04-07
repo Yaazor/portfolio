@@ -63,7 +63,7 @@ export default function(props: ProjectProps) {
                         {descriptionLines}
                     </div>
                 </div>
-                <img className="md:max-w-[35%] max-h-full rounded-lg" src={props.image.src} alt=""/>
+                <img className="md:max-w-[35%] object-cover max-h-full rounded-lg" src={props.image.src} alt=""/>
             </div>
         </div>
     )
