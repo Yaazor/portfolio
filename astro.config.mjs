@@ -15,10 +15,6 @@ export default defineConfig({
 
   output: 'server',
 
-  session: {
-    driver: "node"
-  },
-
   integrations: [react()],
   adapter: vercel()
 });
