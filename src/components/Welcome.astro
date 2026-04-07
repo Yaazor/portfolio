@@ -9,6 +9,8 @@ import BlockText from "./BlockText"
 import { ButtonGroup } from "./ui/button-group";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Projects from "./Projects.astro";
+import { Carousel, CarouselContent } from "./ui/carousel";
 ---
 
 {/** Section Hero */}
@@ -33,5 +35,9 @@ import { ArrowRight } from "lucide-react";
     </BlockText>
 </Section>
 <Section>
-    
+    <Carousel>
+        <CarouselContent>
+            <Projects isCarousel={false}/>
+        </CarouselContent>
+    </Carousel>
 </Section>

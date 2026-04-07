@@ -1,17 +1,47 @@
 ---
-import Section from "./section";
+interface Props {
+    isCarousel: boolean
+}
+
+
 import Project from "./project/Project";
-import ProjectDescription from "./project/ProjectDescription";
+import herobrinefrImage from "../assets/projects/herobrinefr.png"
+import { Carousel, CarouselItem } from "./ui/carousel";
+import PortfolioProjet from '../types/PortfolioProject'
+
+const {isCarousel = false} = Astro.props
+
+const projects = [
+    new PortfolioProjet(
+        {
+            title: "Herobrine.fr",
+            image: herobrinefrImage,
+            technologies: [
+                "Symfony", "MySQL", "Tailwind / Sass"
+            ],
+            description: [
+                "Test"
+            ]
+        }
+    )
+]
+
 ---
 
-<Section>
-    <Project technologies={[
-        "Symfony", "MySQL", "Tailwind / Sass"
-    ]}
-    title="Herobrine.fr - Site"
-    >
-        <ProjectDescription>
-            Test
-        </ProjectDescription>
+{!isCarousel ? projects.map((item) => (
+    <Project technologies={item.getProps().technologies}
+        title={item.getProps().title}
+        image={item.getProps().image}
+        description={item.getProps().description}
+        >
     </Project>
-</Section>
+)) : projects.map((item) => (
+    <CarouselItem>
+        <Project technologies={item.getProps().technologies}
+            title={item.getProps().title}
+            image={item.getProps().image}
+            description={item.getProps().description}
+            >
+        </Project>
+    </CarouselItem>
+))}
