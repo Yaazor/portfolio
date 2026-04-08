@@ -26,14 +26,14 @@ export default function Navigation({children}: any) {
 }
 
 interface NavigationLinkProps {
-    path: URL,
+    path: URL|string,
     name: string
 }
 
 export function NavigationLink(props: NavigationLinkProps) {
 
     return (
-        <a href={props.path.toString()} className="text-xl hover:underline duration-200">
+        <a href={props.path instanceof URL ? props.path.toString() : props.path} className="text-xl hover:underline duration-200">
             {props.name}
         </a>
     )

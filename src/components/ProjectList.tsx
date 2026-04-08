@@ -17,6 +17,7 @@ export default function(props: ProjectListProps) {
                 title={project.title}
                 image={project.image}
                 description={project.description}
+                href={project.href}
                 >
             </Project>
         )

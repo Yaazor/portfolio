@@ -1,0 +1,21 @@
+---
+import Section from '@/components/section'
+import { TypographyH2 } from '@/components/ui/Typography'
+
+interface Props {
+    bannerImage: ImageMetadata,
+    title: string
+}
+
+const {bannerImage, title} = Astro.props
+
+---
+
+<div class="relative h-4">
+    <img src={bannerImage.src} class="w-full absolute brightness-50" alt={Astro.props.title}>
+    <div class="text-center py-7 text-primary-foreground absolute top-0 w-screen h-full z-5">
+        <TypographyH2>
+            {title}
+        </TypographyH2>
+    </div>
+</div>

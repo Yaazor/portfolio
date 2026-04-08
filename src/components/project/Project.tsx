@@ -1,8 +1,9 @@
 import type { ReactNode } from "react"
 import { TypographyH2 } from "../ui/Typography"
 import { Badge } from "../ui/badge"
-import { Image } from "lucide-react"
+import { Image, MoveLeft, MoveRight, SpaceIcon } from "lucide-react"
 import ProjectDescription from "./ProjectDescription"
+import { Button } from "../ui/button"
 
 /**
  * Propriétés du component project.
@@ -25,6 +26,7 @@ export interface ProjectProps {
      */
     technologies: string[],
     description: string[],
+    href?: string
 }
 
 export default function(props: ProjectProps) {
@@ -50,18 +52,26 @@ export default function(props: ProjectProps) {
 
 
     return (
-        <div>
-            <div className="flex flex-col md:flex-row md:justify-between gap-6 bg-neutral-100 p-5 rounded-2xl shadow-sm shadow-primary">
+        <div className="h-full">
+            <div className="flex h-full flex-col md:flex-row md:justify-between gap-6 bg-neutral-100 p-5 rounded-2xl shadow-sm shadow-primary">
                 <div>
                     <TypographyH2>
                         {props.title}
                     </TypographyH2>
-                    <div className="flex gap-2 pb-7">
+                    <div className="flex gap-2 pb-4">
                         {techDisplays}
                     </div>
                     <div>
                         {descriptionLines}
                     </div>
+                    {props.href != null ? (
+                        <Button asChild className="mt-8" size="lg">
+                            <a href={props.href}>
+                                <MoveRight/>
+                                Visiter
+                            </a>
+                        </Button>
+                    ) : (<span></span>)}
                 </div>
                 <img className="md:max-w-[35%] object-cover max-h-full rounded-lg" src={props.image.src} alt=""/>
             </div>
