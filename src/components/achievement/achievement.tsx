@@ -5,7 +5,7 @@ import { TypographyH2 } from "../ui/Typography";
 
 export default function(props: React.PropsWithChildren) {
     return (
-        <CarouselItem className="items-stretch basis-1/3">
+        <CarouselItem className="items-stretch basis-1/2">
             <Card>
                 <CardHeader className="flex flex-2 text-center flex-col">
                     {props.children}
