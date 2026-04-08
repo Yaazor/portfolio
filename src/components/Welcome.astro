@@ -3,7 +3,7 @@ export const prerender = false;
 
 import Section from "./section";
 import { Switch } from "./ui/switch";
-import { TypographyH1, TypographyP } from "./ui/Typography";
+import { TypographyH1, TypographyH2, TypographyP } from "./ui/Typography";
 import Socials from "./Socials"
 import BlockText from "./BlockText"
 import { ButtonGroup } from "./ui/button-group";
@@ -35,9 +35,9 @@ import Projects from "./Projects.astro";
 </Section>
 
 <Section>
-    <TypographyH1>
+    <TypographyH2>
         Projets
-    </TypographyH1>
+    </TypographyH2>
     <div class="pt-6">
         <Projects isCarousel={true}/>
     </div>
