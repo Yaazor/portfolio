@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation, { NavigationLink } from '../components/Navigation'
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter, slide } from 'astro:transitions';
 import { TypographyH1 } from '@/components/ui/Typography';
 import { StrictMode } from 'react';
 
@@ -24,7 +24,7 @@ const {title} = Astro.props;
 				<NavigationLink name="accueil" path={new URL('/', Astro.url)}/>
 				<NavigationLink name="mes projets" path={new URL('projets', Astro.url)}/>
 			</Navigation>
-			<main class="min-h-svh">
+			<main class="min-h-svh" transition:animate={slide({duration: ".6s"})}>
 				<slot />
 			</main>
 
