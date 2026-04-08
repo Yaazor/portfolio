@@ -1,6 +1,6 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Achievement, { AchievementIcon, AchievementTitle } from "./achievement/Achievement";
-import { ChartNoAxesColumnIncreasingIcon, GitGraphIcon, Loader, TrophyIcon, UserIcon } from "lucide-react";
+import { ChartNoAxesColumnIncreasingIcon, GitGraphIcon, HeartIcon, Loader, TrophyIcon, UserIcon } from "lucide-react";
 
 
 export default function() {
@@ -28,10 +28,10 @@ export default function() {
 
                 <Achievement>
                     <AchievementIcon>
-                        <UserIcon/>
+                        <HeartIcon/>
                     </AchievementIcon>
                     <AchievementTitle>
-                        x4 inscriptions annuelles
+                        Projet bénévole
                     </AchievementTitle>
                 </Achievement>
             </CarouselContent>
