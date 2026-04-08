@@ -35,12 +35,14 @@ export default function(props: ProjectListProps) {
 
     if(props.isCarousel) {
         return (
-            <Carousel>
+            <Carousel className="relative">
                 <CarouselContent>
                     {projectsList}
                 </CarouselContent>
                 <CarouselPrevious/>
-                <CarouselNext/>
+                <div className="absolute top-1/2 right-2">
+                    <CarouselNext className="absolute right-0"/>    
+                </div> 
             </Carousel>
         )
     }
