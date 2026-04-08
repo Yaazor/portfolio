@@ -1,10 +1,11 @@
 ---
 import Section from '@/components/section'
 import { TypographyH2 } from '@/components/ui/Typography'
+import type { ReactNode } from 'react'
 
 interface Props {
     bannerImage: ImageMetadata,
-    title: string
+    title: string,
 }
 
 const {bannerImage, title} = Astro.props
@@ -13,10 +14,15 @@ const {bannerImage, title} = Astro.props
 
 <div class="relative h-80">
     <img src={bannerImage.src} class="w-full h-full object-cover absolute brightness-50" alt={Astro.props.title}>
-    <div class="text-center backdrop-blur-sm py-7 text-primary-foreground absolute top-0 w-screen h-full z-5">
-        <TypographyH2>
-            {title}
-        </TypographyH2>
-    </div>
+    <Section className='backdrop-blur-sm py-7 text-primary-foreground absolute top-0 w-screen h-full z-5'>
+        <div>
+            <TypographyH2>
+                {title}
+            </TypographyH2>
+            <div class="mt-3">
+                <slot name="hero-content"/>
+            </div>
+        </div>
+    </Section>
 </div>
 <slot/>

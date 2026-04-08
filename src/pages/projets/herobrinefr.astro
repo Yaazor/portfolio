@@ -13,6 +13,23 @@ import HerobrineCarousel from "@/components/HerobrineCarousel"
 
 <Layout title="Herobrine.fr - Site">
     <ProjectLayout title="Herobrine.fr - Site" bannerImage={banner}>
+        <div slot="hero-content">
+            <TypographyP>
+                Refonte d'une application web complexe,
+                présentant des fonctionnalités telles que des forums, messageries
+                privées et systèmes de jeu intégralement créés à la main.
+            </TypographyP>
+            <TypographyP>
+                Le projet a été réalisé pour une Association 1901,
+                dans un cadre bénévole.
+            </TypographyP>
+            <Button className="mt-8" size="lg">
+                <MoveRight/>
+                <a href="https://herobrine.fr" target="_blank">
+                    Découvrir
+                </a>
+            </Button>
+        </div>
         <Section className="bg-neutral-100">
             <HerobrineCarousel client:load/>
         </Section>
