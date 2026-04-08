@@ -36,7 +36,7 @@ export default function(props: ProjectProps) {
 
     props.technologies.forEach(tech => {
         techDisplays.push(
-            <Badge>
+            <Badge variant="secondary">
                 {tech}
             </Badge>
         )
