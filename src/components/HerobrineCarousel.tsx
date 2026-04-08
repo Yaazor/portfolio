@@ -1,7 +1,7 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import React from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Achievement, { AchievementIcon, AchievementTitle } from "./achievement/achievement";
 import { ChartNoAxesColumnIncreasingIcon, GitGraphIcon, HeartIcon, Loader, TrophyIcon, UserIcon } from "lucide-react";
-
 
 export default function() {
 
@@ -35,6 +35,10 @@ export default function() {
                     </AchievementTitle>
                 </Achievement>
             </CarouselContent>
+            <CarouselPrevious/>
+                <div className="absolute top-1/2 right-2">
+                    <CarouselNext className="absolute right-0"/>    
+                </div> 
         </Carousel>
     )
 }
