@@ -40,7 +40,9 @@ export default function(props: ProjectListProps) {
                 <CarouselContent>
                     {projectsList}
                 </CarouselContent>
-                <CarouselPrevious/>
+                <div className="absolute top-1/2 left-2">
+                    <CarouselPrevious className="absolute left-0"/>    
+                </div> 
                 <div className="absolute top-1/2 right-2">
                     <CarouselNext className="absolute right-0"/>    
                 </div> 
