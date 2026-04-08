@@ -52,8 +52,8 @@ export default function(props: ProjectProps) {
 
 
     return (
-        <div className="h-full">
-            <div className="flex h-full flex-col md:flex-row md:justify-between gap-6 bg-neutral-100 p-5 rounded-2xl shadow-sm shadow-primary">
+        <div className="@container h-full">
+            <div className="flex h-full flex-col @md:flex-row @md:justify-between gap-6 bg-neutral-100 p-5 rounded-2xl shadow-sm shadow-primary">
                 <div>
                     <TypographyH2>
                         {props.title}
@@ -73,7 +73,7 @@ export default function(props: ProjectProps) {
                         </Button>
                     ) : (<span></span>)}
                 </div>
-                <img className="md:max-w-[35%] object-cover max-h-full rounded-lg" src={props.image.src} alt=""/>
+                <img className="@md:max-w-[35%] mt-auto object-cover max-h-full rounded-lg" src={props.image.src} alt=""/>
             </div>
         </div>
     )

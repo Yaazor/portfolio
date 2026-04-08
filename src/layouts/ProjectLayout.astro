@@ -12,9 +12,9 @@ const {bannerImage, title} = Astro.props
 
 ---
 
-<div class="relative h-80">
+<div class="relative">
     <img src={bannerImage.src} class="w-full h-full object-cover absolute brightness-50" alt={Astro.props.title}>
-    <Section className='backdrop-blur-sm py-7 text-primary-foreground absolute top-0 w-screen h-full z-5'>
+    <Section className='backdrop-blur-sm py-9 text-primary-foreground w-screen h-full z-5'>
         <div>
             <TypographyH2>
                 {title}
