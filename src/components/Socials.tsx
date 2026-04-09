@@ -8,7 +8,7 @@ export default function() {
             <SocialsIcon href="https://github.com/Yaazor">
                 <Github color="white"/>
             </SocialsIcon>
-            <SocialsIcon href="https://github.com/Yaazor">
+            <SocialsIcon href="https://www.linkedin.com/in/bruno-plante-godin-44339519a">
                 <Linkedin color="white"/>
             </SocialsIcon>
         </div>
