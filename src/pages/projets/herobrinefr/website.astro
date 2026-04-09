@@ -1,0 +1,75 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ProjectLayout from "@/layouts/ProjectLayout.astro";
+import banner from '../../../assets/projects/herobrinefr.png'
+import { TypographyH2, TypographyP } from "@/components/ui/Typography";
+import Section from "@/components/section";
+import { Card, CardAction, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { CalendarIcon, InfoIcon, MoveRight, WrenchIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import HerobrineCarousel from "@/components/HerobrineCarousel"
+
+---
+
+<Layout title="Herobrine.fr - Site">
+    <ProjectLayout title="Herobrine.fr - Site" bannerImage={banner}>
+        <div slot="hero-content">
+            <TypographyP>
+                Refonte d'une application web complexe,
+                présentant des fonctionnalités telles que des forums, messageries
+                privées et systèmes de jeu intégralement créés à la main.
+            </TypographyP>
+            <TypographyP>
+                Le projet a été réalisé pour une Association 1901,
+                dans un cadre bénévole.
+            </TypographyP>
+            <Button className="mt-8" size="lg">
+                <MoveRight/>
+                <a href="https://herobrine.fr" target="_blank">
+                    Découvrir
+                </a>
+            </Button>
+        </div>
+        <Section className="bg-neutral-100">
+            <HerobrineCarousel client:load/>
+        </Section>
+        <div slot="about-project">
+            <TypographyP>
+                La <strong>refonte</strong> du site web du serveur de jeu <strong>herobrine.fr</strong> est sans aucun doute mon plus grand projet à vie.
+            </TypographyP>
+
+            <TypographyP>
+                Partant d'un site web <strong>vieillissant</strong>, daté de 2012
+                et construit autour de versions <strong>obsolètes</strong> de PHP et MySQL,
+                j'ai eu la chance d'ériger une refonte de la plateforme principale
+                d'une des plus grandes communautés de jeu françaises, comptant plus de <strong>24 000</strong>
+                comptes inscrits et environ <strong>200</strong> joueurs actifs.
+            </TypographyP>
+
+            <TypographyP>
+                La <strong>fréquentation</strong> du serveur, alors en déclin depuis des années, a
+                <strong>doublé</strong> l'année suivante.
+            </TypographyP>
+        </div>
+        <div slot="info-card">
+            <ul>
+                <li>
+                    <CalendarIcon className="text-secondary inline"/>
+                    2024-    
+                </li>
+                <li>
+                    <WrenchIcon className="text-secondary inline"/>
+                    Symfony, MySQL, TailwindCSS, Sass
+                </li>
+            </ul>
+        </div>
+        <div slot="info-card-footer">
+            <Button className="mt-8" size="lg">
+                <MoveRight/>
+                <a href="https://herobrine.fr" target="_blank">
+                    Découvrir
+                </a>
+            </Button>
+        </div>
+    </ProjectLayout>
+</Layout>

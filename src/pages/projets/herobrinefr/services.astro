@@ -1,0 +1,61 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ProjectLayout from "@/layouts/ProjectLayout.astro";
+
+import banner from "../../../assets/projects/herobrinefr-services.png"
+import { TypographyH2, TypographyP } from "@/components/ui/Typography";
+import { Button } from "@/components/ui/button";
+import { CalendarIcon, MoveRight, WrenchIcon } from "lucide-react";
+import Section from "@/components/section";
+---
+
+<Layout title="Herobrine.fr - Services">
+    <ProjectLayout title="Herobrine.fr - Services" bannerImage={banner}>
+        <div slot="hero-content">
+            <TypographyP>
+                Création d'une application légère permettant de relier
+                et facilier la création de divers services liés à un site de jeu.
+            </TypographyP>
+            <TypographyP>
+                Le projet, toujours en cours de création, présente
+                notamment une ébauche de chatbox WebSocket reliée à un client API
+                maison fonctionnant avec les goroutines.
+            </TypographyP>
+            <Button className="mt-8" size="lg">
+                <MoveRight/>
+                <a href="https://github.com/HerobrineFR/services" target="_blank">
+                    Découvrir
+                </a>
+            </Button>
+        </div>
+
+        <div slot="about-project">
+            <TypographyP>
+                Afin d'effectuer une transition et modernisation de certains services d'Herobrine.fr,
+                j'ai débuté un projet en Go visant à créer un ensemble de services
+                permettant de dynamiser l'expérience de jeu.
+            </TypographyP>
+        </div>
+
+        <div slot="info-card">
+            <ul>
+                <li>
+                    <CalendarIcon className="text-secondary inline"/>
+                    2026-    
+                </li>
+                <li>
+                    <WrenchIcon className="text-secondary inline"/>
+                    Go, WebSocket, Typescript
+                </li>
+            </ul>
+        </div>
+
+        <div slot="info-card-footer">
+            <Button className="mt-8" size="lg">
+                <MoveRight/>
+                <a href="https://github.com/HerobrineFR/services" target="_blank">
+                    Découvrir
+                </a>
+            </Button>
+        </div>
+    </ProjectLayout>

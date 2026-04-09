@@ -5,6 +5,7 @@ interface Props {
 
 
 import herobrinefrImage from "../assets/projects/herobrinefr.png"
+import herobrineServicesImage from "../assets/projects/herobrinefr-services.png"
 import portfolioImage from "../assets/projects/portfolio.png"
 import ProjectList from "./ProjectList";
 
@@ -23,7 +24,18 @@ const {isCarousel = false} = Astro.props
             description: [
                 "Refonte d'une application web sortie en 2012 et accueillant plus de 24 000 inscrits.",
             ],
-            href: "/projets/herobrinefr"
+            href: "/projets/herobrinefr/website"
+        },
+        {
+            title: "Herobrine.fr - Services",
+            image: herobrineServicesImage,
+            technologies: [
+                "Go", "WebSocket", "Typescript"
+            ],
+            description: [
+                "Création de services tels qu'une chatbox WebSocket et un client API écrits en Go.",
+            ],
+            href: "/projets/herobrinefr/services"
         },
         {
             title: "Portfolio",

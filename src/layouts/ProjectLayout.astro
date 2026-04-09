@@ -1,5 +1,6 @@
 ---
 import Section from '@/components/section'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { TypographyH2 } from '@/components/ui/Typography'
 import type { ReactNode } from 'react'
 
@@ -14,7 +15,7 @@ const {bannerImage, title} = Astro.props
 
 <div class="relative">
     <img src={bannerImage.src} class="w-full h-full object-cover absolute brightness-50" alt={Astro.props.title}>
-    <Section className='backdrop-blur-sm py-9 text-primary-foreground w-screen h-full z-5'>
+    <Section className='backdrop-blur-xs py-9 text-primary-foreground w-screen h-full z-5'>
         <div>
             <TypographyH2>
                 {title}
@@ -26,3 +27,26 @@ const {bannerImage, title} = Astro.props
     </Section>
 </div>
 <slot/>
+<Section>
+    <div class="flex gap-4 gap-y-10 flex-col-reverse md:flex-row">
+        <article class="flex-2">
+            <TypographyH2>
+                À propos
+            </TypographyH2>
+            <slot name="about-project"/>
+        </article>
+        <aside class="flex-1">
+            <Card>
+                <CardHeader>
+                    <CardTitle>Informations</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <slot name="info-card"/>
+                </CardContent>
+                <CardFooter>
+                    <slot name="info-card-footer"/>
+                </CardFooter>
+            </Card>
+        </aside>
+    </div>
+</Section>
